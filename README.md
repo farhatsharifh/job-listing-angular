@@ -1,5 +1,9 @@
 # JobListing
 
+Solution for frontend coding challenge from Frontend Mentor. 
+This project filters job listings based on different categories.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
 ## Development server
