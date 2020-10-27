@@ -2,7 +2,17 @@
   <img src="./assets/images/bg-header-desktop.svg">
 </div>
 
-<div class="filters"></div>
+<div [ngClass]="{'filter-off': !isFilterOn}">
+<div class="filters-bg">
+  <div class="all-filters" *ngFor="let filter of jobFilters; let i = index">
+    <div class="job-filter">
+      <span class="selected-filter">{{filter}}</span>
+      <span class="remove-filter" (click)=removeFilter(i)><img src="./../assets/images/icon-remove.svg" /></span>
+    </div>
+  </div>
+  <div class="clear-filter" (click)=clearAllFilters()>clear</div>
+</div>
+</div>
 
 <div class="jobs-bg">
   <div class="jobs-data-container" *ngFor="let job of jobsData | jobfilter : jobFilters">
@@ -18,8 +28,8 @@
       <div class="job-title">{{job.position}}</div>
 
       <div class="job-description">
-        <span class="job-postedAt">{{job.postedAt}}</span>
-        <span class="job-contract">{{job.contract}}</span>
+        <span class="job-postedAt">{{job.postedAt}}&nbsp;&nbsp;&nbsp;.</span>
+        <span class="job-contract">{{job.contract}}&nbsp;&nbsp;&nbsp;.</span>
         <span class="job-location">{{job.location}}</span>
       </div>
 

@@ -10,18 +10,33 @@ import * as data from './data.json';
 export class AppComponent {
   jobsData: any = (data as any).default;
   jobFilters = []; 
+  isFilterOn: boolean = false;
 
   constructor(){}
 
   ngOnInit(){
-    console.log(this.jobsData);
+    this.isFilterOn = false;
   }
 
-  filterJobs(filterTag: string) {    
+  filterJobs(filterTag: string) {  
+    this.isFilterOn = true;
     if(!this.jobFilters.includes(filterTag)) {
       this.jobFilters.push(filterTag);
     }
-    console.log("*** filterTags array: ", this.jobFilters);
+  }
+
+  removeFilter(index: number) {
+    if (index !== -1) {
+      this.jobFilters.splice(index, 1);
+    }
+    if (this.jobFilters.length <= 0) {
+      this.isFilterOn = false;
+    }  
+  }
+
+  clearAllFilters() {
+    this.jobFilters = [];
+    this.isFilterOn = false;
   }
 
 }

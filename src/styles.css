@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
+    max-width: 1440px;
     background: hsl(180, 52%, 96%);
     margin: 0px;
     font-size: 15px;
