@@ -1,4 +1,3 @@
-import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 
 import * as data from './data.json';
@@ -10,8 +9,7 @@ import * as data from './data.json';
 })
 export class AppComponent {
   jobsData: any = (data as any).default;
-  // @Input() jobRole: any;
-  isActive: boolean = true;
+  jobFilters = []; 
 
   constructor(){}
 
@@ -19,9 +17,11 @@ export class AppComponent {
     console.log(this.jobsData);
   }
 
-  filterJobs(filterCondition: string) {
-    console.log("filtered ", filterCondition);
-
+  filterJobs(filterTag: string) {    
+    if(!this.jobFilters.includes(filterTag)) {
+      this.jobFilters.push(filterTag);
+    }
+    console.log("*** filterTags array: ", this.jobFilters);
   }
 
 }

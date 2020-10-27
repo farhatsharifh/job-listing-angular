@@ -1,8 +1,13 @@
 <div class="header-overlay">
   <img src="./assets/images/bg-header-desktop.svg">
 </div>
+
+<div class="job-filters">
+
+</div>
+
 <div class="job-overlay">
-  <div class="" *ngFor="let job of jobsData">
+  <div class="" *ngFor="let job of jobsData | jobfilter : jobFilters">
     <div class="job-container" *ngIf="job">
       <img class="employer-logo" width="100" height="100" src={{job.logo}} />
       <span><h4 class="employer-name">{{job.company}}</h4></span>
@@ -17,21 +22,21 @@
       </div>
 
       <div class="filter-tablets">
-        <div class="job-role" (click)=filterJobs(job.role)>{{job.role}}</div>
-        <div class="job-level">{{job.level}}</div>
+        <div class="job-role filter-tag" (click)=filterJobs(job.role)>{{job.role}}</div>
+        <div class="job-level filter-tag" (click)=filterJobs(job.level)>{{job.level}}</div>
 
-        <div class="job-lang">
+        <div class="lang">
           <ul class="job-lang-ul" *ngFor="let lang of job.languages"> 
             <li class="job-lang-li">
-              <div class="lang">{{lang}}</div>
+              <div class="job-lang filter-tag" (click)=filterJobs(lang)>{{lang}}</div>
             </li>
           </ul>
         </div>
 
-        <div class="job-tools" *ngIf="job.tools">
+        <div class="tools" *ngIf="job.tools">
           <ul class="job-tools-ul" *ngFor="let tool of job.tools"> 
             <li class="job-tools-li">
-              <div class="tool">{{tool}}</div>
+              <div class="job-tool filter-tag" (click)=filterJobs(tool)>{{tool}}</div>
             </li>
           </ul>
         </div>
@@ -44,5 +49,5 @@
 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="farhatsharif.com">Farhat Sharif</a>.
+  Coded by <a href="farhatsharif.com" target="_blank">Farhat Sharif</a>.
 </div>
