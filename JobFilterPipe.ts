@@ -16,7 +16,5 @@ export class JobFilterPipe implements PipeTransform {
             let jobStr = JSON.stringify(job).toLowerCase();
             return jobFilters.every (filter => jobStr.includes(filter.toLowerCase()));
         });
-
-        // return items.filter(item => item.job.indexOf(filter.title) !== -1);
     }
 }

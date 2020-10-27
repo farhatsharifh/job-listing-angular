@@ -2,17 +2,19 @@
   <img src="./assets/images/bg-header-desktop.svg">
 </div>
 
-<div class="job-filters">
+<div class="filters"></div>
 
-</div>
-
-<div class="job-overlay">
-  <div class="" *ngFor="let job of jobsData | jobfilter : jobFilters">
+<div class="jobs-bg">
+  <div class="jobs-data-container" *ngFor="let job of jobsData | jobfilter : jobFilters">
     <div class="job-container" *ngIf="job">
-      <img class="employer-logo" width="100" height="100" src={{job.logo}} />
-      <span><h4 class="employer-name">{{job.company}}</h4></span>
-      <span class="new-tag" *ngIf="job.new">New!</span>
-      <span class="featured-tag" *ngIf="job.featured">Featured</span>
+      <div class="employer-logo"><img src={{job.logo}} /></div>
+      
+      <div class="employer-detail">
+        <span><h4 class="employer-name">{{job.company}}</h4></span>
+        <span class="new-tag" *ngIf="job.new">NEW!</span>
+        <span class="featured-tag" *ngIf="job.featured">FEATURED</span>
+      </div>
+      
       <div class="job-title">{{job.position}}</div>
 
       <div class="job-description">
@@ -22,24 +24,24 @@
       </div>
 
       <div class="filter-tablets">
-        <div class="job-role filter-tag" (click)=filterJobs(job.role)>{{job.role}}</div>
-        <div class="job-level filter-tag" (click)=filterJobs(job.level)>{{job.level}}</div>
+        <span class="job-role filter-tag" (click)=filterJobs(job.role)>{{job.role}}</span>
+        <span class="job-level filter-tag" (click)=filterJobs(job.level)>{{job.level}}</span>
 
-        <div class="lang">
-          <ul class="job-lang-ul" *ngFor="let lang of job.languages"> 
-            <li class="job-lang-li">
-              <div class="job-lang filter-tag" (click)=filterJobs(lang)>{{lang}}</div>
+        <span class="langs">
+          <ul class="job-langs-ul" *ngFor="let lang of job.languages"> 
+            <li class="job-langs-li">
+              <span class="job-lang filter-tag" (click)=filterJobs(lang)>{{lang}}</span>
             </li>
           </ul>
-        </div>
+        </span>
 
-        <div class="tools" *ngIf="job.tools">
+        <span class="tools" *ngIf="job.tools">
           <ul class="job-tools-ul" *ngFor="let tool of job.tools"> 
             <li class="job-tools-li">
-              <div class="job-tool filter-tag" (click)=filterJobs(tool)>{{tool}}</div>
+              <span class="job-tool filter-tag" (click)=filterJobs(tool)>{{tool}}</span>
             </li>
           </ul>
-        </div>
+        </span>
 
       </div> <!-- end of DIV "filter-tablets" -->
     </div> <!-- end of DIV "job-container" -->
@@ -49,5 +51,5 @@
 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="farhatsharif.com" target="_blank">Farhat Sharif</a>.
+  Coded by <a href="https://farhatsharif.com" target="_blank">Farhat Sharif</a>.
 </div>
