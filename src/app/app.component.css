@@ -1,64 +1,70 @@
 .header-overlay {
-    background: hsl(180, 29%, 50%);  
+    background: var(--desaturated-dark-cyan);  
     opacity: 0.8;
     margin: 0px;
     height: 160px;
 }
 .header-overlay img {
-    width: 100%;
+    width: var(--container-width100);
     height: 160px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr auto;
+    width: var(--container-width80);
+    margin: 0px auto;
 }
 .filter-off {
     display: none;
 }
-.filters-bg {
-    display: flex;
-    flex-wrap: wrap;
-    width: 83.33%;
+.grid-child .filters-bg{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px, auto;
+    width: 80%;
     height: 50px;
-    z-index: 100;
-    background: hsl(217, 0%, 100%);
+    background: var(--color-white);
     position: absolute;
     top: 105px;
-    margin: 10px 100px 0px ;
     padding: 20px;
     border-radius: 10px;
-    -webkit-box-shadow: 0 8px 8px 3px hsl(180, 20%, 88%);
-    -moz-box-shadow: 0 8px 8px 3px hsl(180, 20%, 88%);
-    box-shadow: 0 8px 15px 3px hsl(180, 20%, 88%);   
+    -webkit-box-shadow: 0 8px 15px 3px var(--color-shadow);
+    -moz-box-shadow: 0 8px 15px 3px var(--color-shadow);
+    box-shadow: 0 8px 15px 3px var(--color-shadow);
+    align-content: space-around;
+    grid-auto-flow: row;
 }
 .all-filters {
-    display: inline;
     align-self: center;
+    margin: 0px;
 }
 .job-filter {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .selected-filter {
-    display: inline;
-    background-color: hsl(180, 52%, 96%);
-    color: hsl(180, 34%, 52%);
+    background-color: var(--color-filter-tablets);
+    color: var(--color-title-hover);
     padding: 8px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .remove-filter {
-    display: inline;
-    background-color: hsl(180, 34%, 52%);
-    color: hsl(180, 52%, 96%);
+    background-color: var(--color-title-hover);
+    color: var(--color-filter-tablets);
     padding: 8px;
     margin-top: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 .remove-filter:hover {
-    background-color: hsl(180, 5%, 20%);
+    background-color: var(--color-dark-grey);
     cursor: pointer;
 }
 .clear-filter {
-    color: hsl(180, 34%, 52%);
+    color: var(--color-title-hover);
     position: absolute;
-    right: 130px;
+    right: 100px;
     align-self: center;
 }
 .clear-filter:hover {
@@ -66,15 +72,13 @@
 }
 .jobs-bg {
     margin: 100px auto;  
+    box-sizing: border-box;
 }
 .jobs-data-container {
-    max-width: 1440px;
-    display: grid;
-    grid-template-columns: 4fr;
-    margin: 8px auto;
+    box-sizing: border-box;
 }
 .job-container {
-    max-width: 1440px;
+    width: var(--container-width100);;
     display: grid;
     grid-template-columns: 0.23fr 1fr 1fr;
     grid-template-rows: 0.35fr 0.35fr 0.35fr;
@@ -82,36 +86,38 @@
         "logo employer ."
         "logo title tags"
         "logo description .";
-    background: hsl(217, 0%, 100%);
-    margin: 10px 100px;
+        row-gap: 1rem;
+    background: var(--color-white);
+    margin-top: 10px;
+    margin-bottom: 30px;
     padding: 20px;
     border-radius: 10px;
-    -webkit-box-shadow: 0 8px 8px 5px hsl(180, 20%, 88%);
-    -moz-box-shadow: 0 8px 8px 5px hsl(180, 20%, 88%);
-    box-shadow: 0 8px 8px 5px hsl(180, 20%, 88%);
+    -webkit-box-shadow: 0 8px 8px 5px var(--color-shadow);
+    -moz-box-shadow: 0 8px 8px 5px var(--color-shadow);
+    box-shadow: 0 8px 8px 5px var(--color-shadow);
 }
 .employer-logo {
     grid-area: logo;
     width: 100px;
     height: 100px;
+    margin: 10px;
 }
 .employer-logo img {
     width: 80px;
     height: 80px;
-    margin: 10px;
 }
 .employer-detail {
     grid-area: employer;
 }
 .employer-name {
     display: inline;
-    color: hsl(180, 34%, 52%);
+    color: var(--color-title-hover);
     font-weight: 800;
     font-size: 15px;
 }
 .new-tag {
-    background: hsl(180, 34%, 52%);
-    color: hsl(0, 0%, 100%);
+    background: var(--color-title-hover);
+    color: var(--color-tag-hover);
     padding: 8px;
     margin-left: 10px;
     margin-right: 10px;
@@ -120,8 +126,8 @@
     font-weight: 700;
 }
 .featured-tag {
-    background-color: hsl(180, 5%, 20%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--color-dark-grey);
+    color: var(--color-tag-hover);
     padding: 8px;
     margin-left: 10px;
     margin-right: 10px;
@@ -131,13 +137,13 @@
 }
 .job-title {
     grid-area: title;
-    color: hsl(180, 5%, 20%);
+    color: var(--color-dark-grey);
     font-weight: 800;
     font-size: 20px;
     padding-top: 10px;
 }
 .job-title:hover {
-    color: hsl(180, 34%, 52%);
+    color: var(--color-title-hover);
     cursor: pointer;
 }
 .filter-tablets {
@@ -147,20 +153,21 @@
 }
 .filter-tag {
     display: inline-flex;
-    background-color: hsl(180, 52%, 96%);
-    color: hsl(180, 34%, 52%);;
+    background-color: var(--color-filter-tablets);
+    color: var(--color-title-hover);
     padding: 8px;
     border-radius: 5px;
     margin-right: 20px;
+    margin-bottom: 5px;
 }
 .filter-tag:hover {
-    background: hsl(180, 34%, 52%);
-    color: hsl(0, 0%, 100%);
+    background: var(--color-title-hover);
+    color: var(--color-tag-hover);
     cursor: pointer;
 }
 .job-description {
     grid-area: description;
-    color: hsl(180, 5%, 59%);
+    color: var(--color-light-grey);
 }
 .job-langs-ul, .job-tools-ul {
     margin: 0px;
@@ -186,7 +193,7 @@
 }
 
 
-@media only screen and (max-width: 1295px) {
+@media only screen and (max-width: 1340px) {
     .job-container {
         display: grid;
         grid-template-columns: 0.23fr 0.8fr 0.8fr;
@@ -200,14 +207,11 @@
         width: 81.60%;
     }
     .job-description {
-        padding-top: 10px;
         font-size: 12px;
-    }
-  }
-@media only screen and (max-width: 950px) {
+    }  
+}
+@media only screen and (max-width: 786px) {
     .job-container {
-        max-width: 950px;
-        display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
         grid-template-areas: 
@@ -216,48 +220,36 @@
             "title"
             "description"
             "tags";
+        row-gap: 0.1rem;
     }
-    .filters-bg {
-        width: 70.62%;
+    .clear-filter {
+        right: 50px;
     }
     .filter-tablets {
-        border-top: 0.5px solid hsl(180, 5%, 59%);
-        padding-top: 10px;
+        border-top: 0.5px solid var(--color-light-grey);
+        padding-top: 15px;
     }
     .job-title {
-        padding-top: 2px; 
+        padding-top: 0px; 
     }
   }
 
-  @media only screen and (max-width: 650px) {
-    .job-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
-        grid-template-areas: 
-            "logo"
-            "employer"
-            "title"
-            "description"
-            "tags";
-        margin-bottom: 50px;
-    }
+  @media only screen and (max-width: 600px) {
     .filters-bg {
         width: 85.63%;
+    }
+    .job-container {
+        margin-bottom: 50px;
     }
     .job-container > * {
         position: relative;
         top: -60px;
     }
-    .job-description {
-        padding-top: 10px;
-        font-size: 10px;
+    .clear-filter {
+        right: 20px;
     }
     .filter-tablets {
-        border-top: 0.5px solid hsl(180, 5%, 59%);
+        border-top: 0.5px solid var(--color-light-grey);
         padding-top: 10px;
-    }
-    .filter-tag {
-        margin-bottom: 5px;
-    }
+    } 
   }

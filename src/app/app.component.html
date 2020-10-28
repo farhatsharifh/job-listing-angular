@@ -1,23 +1,27 @@
 <div class="header-overlay">
-  <img src="./assets/images/bg-header-desktop.svg">
+  <img src="./assets/images/bg-header-desktop.svg"  alt="header">
 </div>
 
+<div class="container">
+
+<div class="grid-child">
 <div [ngClass]="{'filter-off': !isFilterOn}">
 <div class="filters-bg">
   <div class="all-filters" *ngFor="let filter of jobFilters; let i = index">
     <div class="job-filter">
       <span class="selected-filter">{{filter}}</span>
-      <span class="remove-filter" (click)=removeFilter(i)><img src="./../assets/images/icon-remove.svg" /></span>
+      <span class="remove-filter" (click)=removeFilter(i)><img src="./../assets/images/icon-remove.svg" alt="remove filter" /></span>
     </div>
   </div>
   <div class="clear-filter" (click)=clearAllFilters()>clear</div>
 </div>
 </div>
+</div>
 
-<div class="jobs-bg">
+<div class="jobs-bg grid-child">
   <div class="jobs-data-container" *ngFor="let job of jobsData | jobfilter : jobFilters">
     <div class="job-container" *ngIf="job">
-      <div class="employer-logo"><img src={{job.logo}} /></div>
+      <div class="employer-logo"><img src={{job.logo}} alt="company logo" /></div>
       
       <div class="employer-detail">
         <span><h4 class="employer-name">{{job.company}}</h4></span>
@@ -57,6 +61,8 @@
     </div> <!-- end of DIV "job-container" -->
   </div>
 </div> <!-- end of DIV jobs-bg -->
+
+</div> <!-- end of DIV "container" -->
 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

@@ -5,5 +5,18 @@ body {
     margin: 0px;
     font-size: 15px;
     font-family: 'Spartan', sans-serif;
-    font-weight: 15;
+}
+
+:root {
+    --color-white: hsl(217, 0%, 100%);
+    --color-dark-grey: hsl(180, 5%, 20%);
+    --color-light-grey: hsl(180, 5%, 59%);
+    --desaturated-dark-cyan: hsl(180, 29%, 50%);
+    --color-title-hover: hsl(180, 34%, 52%);
+    --color-filter-tablets: hsl(180, 52%, 96%);
+    --color-tag-hover: hsl(0, 0%, 100%);
+    --color-shadow: hsl(180, 20%, 88%);
+
+    --container-width80: 80%;
+    --container-width100: 100%;
 }
