@@ -5,7 +5,7 @@
     height: 160px;
 }
 .header-overlay img {
-    width: 1440px;
+    width: 100%;
     height: 160px;
 }
 .filter-off {
@@ -14,7 +14,7 @@
 .filters-bg {
     display: flex;
     flex-wrap: wrap;
-    width: 83%;
+    width: 83.33%;
     height: 50px;
     z-index: 100;
     background: hsl(217, 0%, 100%);
@@ -74,6 +74,7 @@
     margin: 8px auto;
 }
 .job-container {
+    max-width: 1440px;
     display: grid;
     grid-template-columns: 0.23fr 1fr 1fr;
     grid-template-rows: 0.35fr 0.35fr 0.35fr;
@@ -133,6 +134,7 @@
     color: hsl(180, 5%, 20%);
     font-weight: 800;
     font-size: 20px;
+    padding-top: 10px;
 }
 .job-title:hover {
     color: hsl(180, 34%, 52%);
@@ -141,8 +143,10 @@
 .filter-tablets {
     grid-area: tags;
     display: inline;
+    padding: 2px;
 }
 .filter-tag {
+    display: inline-flex;
     background-color: hsl(180, 52%, 96%);
     color: hsl(180, 34%, 52%);;
     padding: 8px;
@@ -180,3 +184,80 @@
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+
+@media only screen and (max-width: 1295px) {
+    .job-container {
+        display: grid;
+        grid-template-columns: 0.23fr 0.8fr 0.8fr;
+        grid-template-rows: 0.35fr 0.35fr 0.35fr;
+        grid-template-areas: 
+            "logo employer tags"
+            "logo title tags"
+            "logo description .";
+    }
+    .filters-bg {
+        width: 81.60%;
+    }
+    .job-description {
+        padding-top: 10px;
+        font-size: 12px;
+    }
+  }
+@media only screen and (max-width: 950px) {
+    .job-container {
+        max-width: 950px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
+        grid-template-areas: 
+            "logo"
+            "employer"
+            "title"
+            "description"
+            "tags";
+    }
+    .filters-bg {
+        width: 70.62%;
+    }
+    .filter-tablets {
+        border-top: 0.5px solid hsl(180, 5%, 59%);
+        padding-top: 10px;
+    }
+    .job-title {
+        padding-top: 2px; 
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .job-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
+        grid-template-areas: 
+            "logo"
+            "employer"
+            "title"
+            "description"
+            "tags";
+        margin-bottom: 50px;
+    }
+    .filters-bg {
+        width: 85.63%;
+    }
+    .job-container > * {
+        position: relative;
+        top: -60px;
+    }
+    .job-description {
+        padding-top: 10px;
+        font-size: 10px;
+    }
+    .filter-tablets {
+        border-top: 0.5px solid hsl(180, 5%, 59%);
+        padding-top: 10px;
+    }
+    .filter-tag {
+        margin-bottom: 5px;
+    }
+  }
