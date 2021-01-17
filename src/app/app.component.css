@@ -1,5 +1,5 @@
 .header-overlay {
-    background: var(--desaturated-dark-cyan);  
+    background: var(--desaturated-dark-cyan);
     opacity: 0.8;
     margin: 0px;
     height: 160px;
@@ -21,7 +21,7 @@
 .grid-child .filters-bg{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 100px, auto;
+    /* grid-template-rows: 200px, auto; */
     width: 80%;
     height: 50px;
     background: var(--color-white);
@@ -32,8 +32,7 @@
     -webkit-box-shadow: 0 8px 15px 3px var(--color-shadow);
     -moz-box-shadow: 0 8px 15px 3px var(--color-shadow);
     box-shadow: 0 8px 15px 3px var(--color-shadow);
-    align-content: space-around;
-    grid-auto-flow: row;
+    /* align-content: space-around; */
 }
 .all-filters {
     align-self: center;
@@ -71,7 +70,7 @@
     cursor: pointer;
 }
 .jobs-bg {
-    margin: 100px auto;  
+    margin: 100px auto;
     box-sizing: border-box;
 }
 .jobs-data-container {
@@ -82,7 +81,7 @@
     display: grid;
     grid-template-columns: 0.23fr 1fr 1fr;
     grid-template-rows: 0.35fr 0.35fr 0.35fr;
-    grid-template-areas: 
+    grid-template-areas:
         "logo employer ."
         "logo title tags"
         "logo description .";
@@ -185,71 +184,86 @@
     margin-right: 20px;
 }
 /* footer */
-.attribution { 
-    font-size: 11px; text-align: center; 
+.attribution {
+    font-size: 11px; text-align: center;
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
 
 
 @media only screen and (max-width: 1340px) {
-    .job-container {
-        display: grid;
-        grid-template-columns: 0.23fr 0.8fr 0.8fr;
-        grid-template-rows: 0.35fr 0.35fr 0.35fr;
-        grid-template-areas: 
-            "logo employer tags"
-            "logo title tags"
-            "logo description .";
-    }
-    .filters-bg {
-        width: 81.60%;
-    }
-    .job-description {
-        font-size: 12px;
-    }  
+  .job-container {
+      display: grid;
+      grid-template-columns: 0.23fr 0.8fr 0.8fr;
+      grid-template-rows: 0.35fr 0.35fr 0.35fr;
+      grid-template-areas:
+          "logo employer tags"
+          "logo title tags"
+          "logo description .";
+  }
+  .filters-bg {
+      width: 81.60%;
+  }
+  .job-description {
+      font-size: 12px;
+  }
 }
-@media only screen and (max-width: 786px) {
-    .job-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
-        grid-template-areas: 
-            "logo"
-            "employer"
-            "title"
-            "description"
-            "tags";
-        row-gap: 0.1rem;
-    }
-    .clear-filter {
-        right: 50px;
-    }
-    .filter-tablets {
-        border-top: 0.5px solid var(--color-light-grey);
-        padding-top: 15px;
-    }
-    .job-title {
-        padding-top: 0px; 
-    }
-  }
 
-  @media only screen and (max-width: 600px) {
-    .filters-bg {
-        width: 85.63%;
-    }
-    .job-container {
-        margin-bottom: 50px;
-    }
-    .job-container > * {
-        position: relative;
-        top: -60px;
-    }
-    .clear-filter {
-        right: 20px;
-    }
-    .filter-tablets {
-        border-top: 0.5px solid var(--color-light-grey);
-        padding-top: 10px;
-    } 
+@media only screen and (max-width: 1048px) {
+  .grid-child .filters-bg{
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 12px;
   }
+  .all-filters, .job-filter {
+    margin-bottom: 10px;
+  }
+  .remove-filter img {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+.job-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.35fr 0.35fr 0.35fr 0.35fr 0.35fr;
+    grid-template-areas:
+        "logo"
+        "employer"
+        "title"
+        "description"
+        "tags";
+    row-gap: 0.1rem;
+  }
+  .clear-filter {
+      right: 50px;
+  }
+  .filter-tablets {
+      border-top: 0.5px solid var(--color-light-grey);
+      padding-top: 15px;
+  }
+  .job-title {
+      padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filters-bg {
+      width: 85.63%;
+  }
+  .job-container {
+      margin-bottom: 50px;
+  }
+  .job-container > * {
+      position: relative;
+      top: -60px;
+  }
+  .clear-filter {
+      right: 20px;
+  }
+  .filter-tablets {
+      border-top: 0.5px solid var(--color-light-grey);
+      padding-top: 10px;
+  }
+}
